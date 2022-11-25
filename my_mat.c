@@ -11,7 +11,7 @@ void floydWarshall(int mat[V][V]){
     //     }
     // }
 
-    for(int k = 0 ; k <= V ; k++){
+    for(int k = 0 ; k < V ; k++){
         for(int i = 0 ; i < V ; i++){
             for(int j = 0 ; j < V ; j++){
                 a = mat[i][k];
