@@ -2,14 +2,8 @@
 #include "my_mat.h"
 
 
-void floydWarshall(int mat[V][V]){
+void floydWarshall(int mat[V][V]){ // algorithm for shortest way
     int a, b, minsum , sum;
-    
-    // for(i = 0 ; i < V ; i++){
-    //     for(j = 0 ; j < V ; j++){
-    //         dist[i][j] = mat[i][j];
-    //     }
-    // }
 
     for(int k = 0 ; k < V ; k++){
         for(int i = 0 ; i < V ; i++){
@@ -32,7 +26,7 @@ void floydWarshall(int mat[V][V]){
                 else{
                     minsum = sum;
                 }
-                if(i == j){
+                if(i == j){ 
                     minsum = 0;
                 }
                 mat[i][j] = minsum;
@@ -43,7 +37,7 @@ void floydWarshall(int mat[V][V]){
 }
 
 
-void matrixInsert(int mat[V][V]){
+void matrixInsert(int mat[V][V]){ //insert the numbers to the matrix
     int num = 0;
     for(int i = 0 ; i < V ; i++){
         for(int j = 0 ; j < V ; j++){
@@ -51,38 +45,11 @@ void matrixInsert(int mat[V][V]){
             mat[i][j] = num;
         }
     }
-    // printf("\n");
-    // printf("\n");
-    // for (int i = 0; i < V; i++) {
-    //     for (int j = 0; j < V; j++) {
-    //         if (mat[i][j] == 0){
-    //             printf(" %d", 0);
-    //         }
-    //         else{
-    //             printf(" %d", mat[i][j]);
-    //         }
-    //     }
-    //     printf("\n");
-    // } 
-    // printf("\n");
-    // printf("\n");
-
-    floydWarshall(mat);
-
-    // for (int i = 0; i < V; i++) {
-    //     for (int j = 0; j < V; j++) {
-    //         if (mat[i][j] == 0)
-    //             printf(" %d", 0);
-    //         else
-    //             printf(" %7d", mat[i][j]);
-    //     }
-    //     printf("\n");
-    // }
+    floydWarshall(mat); 
 }
 
 
-void isRoutable(int mat[V][V] , int i , int j){
-
+void isRoutable(int mat[V][V] , int i , int j){ // checks if there is a way from A to B
     if(mat[i][j] == 0){
         printf("False\n");
     }
@@ -91,7 +58,7 @@ void isRoutable(int mat[V][V] , int i , int j){
     }
 }
 
-void shortest(int mat[V][V] , int i , int j){
+void shortest(int mat[V][V] , int i , int j){ // checks the shortest way from A to B depends on the algorithm
      if(mat[i][j] == 0){
         printf("-1\n");
     }

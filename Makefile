@@ -11,3 +11,6 @@ my_mat.o: my_mat.h my_mat.c
 
 clean:
 	rm -f *.o *.a *.so co connections
+
+leakTest: clean connections
+	valgrind --leak-check=full  --track-origins=yes --show-leak-kinds=all --error-exitcode=1 ./connections
