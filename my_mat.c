@@ -27,7 +27,7 @@ void floydWarshall(int mat[V][V]){ // algorithm for shortest way
                     minsum = sum;
                 }
                 if(i == j){ 
-                    minsum = mat[j];
+                    minsum = 0;
                 }
                 mat[i][j] = minsum;
             }
